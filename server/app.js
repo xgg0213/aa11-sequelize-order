@@ -40,7 +40,7 @@ app.get('/bands/alphabetic-musicians', async (req, res, next) => {
     const bands = await Band.findAll({ 
         include: { model: Musician }, 
         // Your code here 
-        order: [['name', 'ASC'], [Musician,'lastName','ASC']]
+        order: [['name', 'ASC'], [Musician,'lastName','ASC'], [Musician,'firstName','ASC']]
     })
     res.json(bands);
 })
